@@ -13,24 +13,16 @@ import sklearn.metrics
 
 os.chdir("E:\Python_Course")
 
-"""
-Data Engineering and Analysis
-"""
 #Load the dataset
-
 AH_data = pd.read_csv("gap.csv")
 
-#data_clean = AH_data.dropna()
-data_clean = AH_data.fillna(AH_data.mean()) 
+data_clean = AH_data.dropna()
+#data_clean = AH_data.fillna(AH_data.mean()) -- this is the second run
 
 data_clean.dtypes
 data_clean.describe()
 
-"""
-Modeling and Prediction
-"""
 #Split into training and testing sets
-
 predictors = data_clean[['incomeperperson','alcconsumption','armedforcesrate',
                          'breastcancerper100th','co2emissions','femaleemployrate',
                          'hivrate','lifeexpectancy','oilperperson',
@@ -45,7 +37,6 @@ pred_test.shape
 tar_train.shape
 tar_test.shape
 
-#Build model on training data
 classifier=DecisionTreeClassifier()
 classifier=classifier.fit(pred_train,tar_train)
 
@@ -56,14 +47,10 @@ sklearn.metrics.accuracy_score(tar_test, predictions)
 
 #Displaying the decision tree
 from sklearn import tree
-#from StringIO import StringIO
 from io import StringIO
-#from StringIO import StringIO 
-from IPython.display import Image
 out = StringIO()
 tree.export_graphviz(classifier, out_file=out)
 import pydotplus
 graph=pydotplus.graph_from_dot_data(out.getvalue())
 graph.write_png('MyGap.png')
-#graph.write_png('MyGapMean.png')
-Image(graph.create_png())
+#graph.write_png('MyGapMean.png') -- this is the second run
