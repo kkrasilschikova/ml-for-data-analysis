@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-
 import pandas as pd
 import os
 from sklearn.model_selection import train_test_split 
