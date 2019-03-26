@@ -10,7 +10,8 @@ The following explanatory variables were included to perform classification:
   - co2emissions (cumulative CO2 emission)
   - femaleemployrate (female employees age 15+)
   - hivrate (estimated HIV Prevalence %)
-  - lifeexpectancy,	oilperperson (oil consumption per capita)
+  - lifeexpectancy	
+  - oilperperson (oil consumption per capita)
   - polityscore (democracy score)
   - relectricperperson (residential electricity consumption)
   - suicideper100th (Suicide, age adjusted, per 100 000)
