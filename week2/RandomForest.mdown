@@ -1,0 +1,25 @@
+### Random Forests
+
+In this week task I used random forest analysis in order to define the importance of explanatory variables in predicting categorical response variable.
+
+I took GapMinder dataset so the following explanatory variables were included to build random forest:
+  - incomeperperson (GDP per capita)
+  - alcconsumption (alcohol consumption per adult age 15+)
+  - armedforcesrate (armed forces personnel)
+  - breastcancerper100th (breast cancer new cases per 100,000 female)
+  - co2emissions (cumulative CO2 emission)
+  - femaleemployrate (female employees age 15+)
+  - hivrate (estimated HIV Prevalence %)
+  - lifeexpectancy,	
+  - oilperperson (oil consumption per capita)
+  - polityscore (democracy score)
+  - relectricperperson (residential electricity consumption)
+  - suicideper100th (Suicide, age adjusted, per 100 000)
+  - employrate (total employees age 15+)
+  - urbanrate (urban population)
+  
+  As in classification with decision tree last week, my target variable was 'internetuserate', it was transformed to response variable in the following way: if value is greater or equal 70, then it is classified as 1, if value is less than 70, then it is classified as 0.
+  
+  According to the relative importance of each attribute [picture](https://github.com/kkrasilschikova/ml-for-data-analysis/blob/master/week2/plot.png), 'incomeperperson' variable has the highest importance score (highlighted yellow), this is kind of expected as 'incomeperperson' variable was the first to split the dataset in several runs of decision tree algorithm last week. The least important feature was 'lifeexpectancy' (underscored blue).
+  
+  Finally, the accuracy of the random forest was 94%, which is higher than I got using desicion tree (around 80%) suggesting it is more effective to use random forest rather than decision tree.
