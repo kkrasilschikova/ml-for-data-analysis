@@ -22,11 +22,11 @@ All predictor variables were scaled using MinMaxScaler() and standardized to hav
 
 My target variable was 'internetuserate', it was transformed to response variable in the following way: if value is greater or equal 70, then it is classified as 1, if value is less than 70, then it is classified as 0.
 
-The data was randomly split into 60% observations in training set with 127 samples and 40% in test set with 86 samples. Tha least angle regression algorithm with k = 5 fold cross validation was used to estimate the lasso regression model in the training set. The change in the cross validation mean squared error at each step was used to identify the best subgroup of predictor variables.
+The data was randomly split into 60% observations in training set with 127 samples and 40% in test set with 86 samples. The least angle regression algorithm with k = 5 fold cross validation was used to estimate the lasso regression model in the training set. The change in the cross validation mean squared error at each step was used to identify the best subgroup of predictor variables.
 
 Resulting plots are available [here](https://github.com/kkrasilschikova/ml-for-data-analysis/blob/master/week3/plots.PNG)
 
-Only 4 predictor variables remained in the selected model: 'incomeperperson' was most strongly associated with Internet user rate that corresponds with results of Decision tree and Random forest algoritms in previous tasks. 'breastcancerper100th', 'femaleemployrate' and 'relectricperperson' were also associated with 'internetuserate'.
+Only 4 predictor variables remained in the selected model: 'incomeperperson' was most strongly associated with Internet user rate that corresponds with results of Decision tree and Random forest algorithms in previous tasks. 'breastcancerper100th', 'femaleemployrate' and 'relectricperperson' were also associated with 'internetuserate'.
 
 As for error, that is was I got
   - training data mean_squared_error 0.062198215815520756
