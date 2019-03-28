@@ -1,0 +1,53 @@
+Clustering variable means by cluster
+              index  incomeperperson    ...      employrate  urbanrate
+cluster                                 ...                           
+0         99.472222        -0.556234    ...        1.092372  -1.126967
+1        102.606383        -0.217317    ...       -0.408090   0.113276
+2         93.736842         1.731892    ...        0.183058   0.980240
+
+[3 rows x 15 columns]
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        internetuserate   R-squared:                       0.529
+Model:                            OLS   Adj. R-squared:                  0.526
+Method:                 Least Squares   F-statistic:                     165.1
+Date:                Thu, 28 Mar 2019   Prob (F-statistic):           8.40e-26
+Time:                        13:26:35   Log-Likelihood:                -645.42
+No. Observations:                 149   AIC:                             1295.
+Df Residuals:                     147   BIC:                             1301.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      6.7766      2.717      2.494      0.014       1.406      12.147
+cluster       32.6857      2.544     12.848      0.000      27.658      37.713
+==============================================================================
+Omnibus:                        0.861   Durbin-Watson:                   1.906
+Prob(Omnibus):                  0.650   Jarque-Bera (JB):                0.980
+Skew:                           0.139   Prob(JB):                        0.613
+Kurtosis:                       2.716   Cond. No.                         3.28
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+means for internetuserate by cluster
+         internetuserate
+cluster                 
+0               9.828250
+1              37.124988
+2              77.930096
+standard deviations for internetuserate by cluster
+         internetuserate
+cluster                 
+0              11.170797
+1              21.087912
+2              13.490679
+Multiple Comparison of Means - Tukey HSD,FWER=0.05
+=============================================
+group1 group2 meandiff  lower   upper  reject
+---------------------------------------------
+  0      1    27.2967  18.7938 35.7997  True 
+  0      2    68.1018  55.8001 80.4036  True 
+  1      2    40.8051  29.8929 51.7173  True 
+---------------------------------------------

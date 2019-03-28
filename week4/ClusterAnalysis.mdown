@@ -1,0 +1,30 @@
+### k-means Cluster Analysis
+
+In the final task I used k-means cluster analysis to identify subgroups of countries based on the similarity of responses to a subset with 15 indicators including gross domestic product, cumulative CO2 emission, urban population and others that might have an impact on Internet user rate.
+
+As previously, I took GapMinder dataset so the following quantitative variables were included:
+
+  - incomeperperson (GDP per capita)
+  - alcconsumption (alcohol consumption per adult age 15+)
+  - armedforcesrate (armed forces personnel)
+  - breastcancerper100th (breast cancer new cases per 100,000 female)
+  - co2emissions (cumulative CO2 emission)
+  - femaleemployrate (female employees age 15+)
+  - hivrate (estimated HIV Prevalence %)
+  - lifeexpectancy	
+  - oilperperson (oil consumption per capita)
+  - polityscore (democracy score)
+  - relectricperperson (residential electricity consumption)
+  - suicideper100th (Suicide, age adjusted, per 100 000)
+  - employrate (total employees age 15+)
+  - urbanrate (urban population)
+
+All clustering variables were scaled using MinMaxScaler() and standardized to have a mean of zero and a standard deviation of one. The data was randomly split into 70% observations in training set with 149 samples and 30% in test set with 64 samples.
+
+For 1-9 cluster a series of k-means cluster analysis was performed using Euclidean distance. Then I chose 3 clusters after [plotting](https://github.com/kkrasilschikova/ml-for-data-analysis/blob/master/week4/elbow.PNG) average distance from observations from the cluster centroid using Elbow method.
+
+Then canonical discriminant analyses was used to reduce the 14 clustering variables down to a few that accounted for most of the variance in the clustering variables. As we can see on the [scattelplot](https://github.com/kkrasilschikova/ml-for-data-analysis/blob/master/week4/clusters.PNG) of the first 2 canonical variables, observations in cluster 3 (yellow) and cluster 2 (green) intersect in some points, the thrid cluster has greater spread suggesting high within cluster variance, the second cluster might seem more densly packed, the first one (purple) almost doesn't overlap with other clusters and has relatively low within cluster variance.
+
+The [means](https://github.com/kkrasilschikova/ml-for-data-analysis/blob/master/week4/results.mdown) on the clustering variables showed that in comparison to the other clusters, countries in cluster 2 have greater income per person and urban rate while employ rate is moderate, countries in cluster 1 have low income per person, the lowest employ rate and moderate urban rate, countries in cluster 0 have the lowest income per person and urbanrate while employ rate is the highest.
+
+Finally, in order to externally validate the clusters, an Analysis of Variance (ANOVA) was conducting to test for significant differences between the clusters on Internet user rate. A tukey test was used for post hoc comparisons between the clusters. Results indicated significant differences between the clusters on 'internetuserate': countries in cluster 2 have the higherst rate while for countries in cluster 0 it is the lowest. The tukey post hoc comparisons showed significant differences between clusters on Internet user rate.
